@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<nav class="menu-top">
+<a href="index.html">Home</a>
+<a href="experience.html">Experience</a>
+<a href="where.html">Where to go</a>
+<a href="activities.html">Activities</a>
+<a href="tips.html">Travel Tips</a>
+</nav>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Norcasia Travel Blog</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="content-page">
+    <h1>What To Do</h1>
+
+    <ul>
+      <li>Body rafting in La Miel River</li>
+      <li>Tubing through the Rio Claro canyons</li>
+      <li>Exploring the San Lorenzo Waterfall</li>
+    </ul>
+
+    <p>
+      These activities combine nature, adventure and relaxation. Local guides can also explain
+      the ecological importance of the region and help visitors enjoy the place safely.
+    </p>
+
+    <div class="gallery">
+      <img src="imagenes/imagen7.jpg" alt="">
+      <img src="imagenes/imagen8.jpg" alt="">
+      <img src="imagenes/imagen9.jpg" alt="">
+    </div>
+
+    <a href="index.html" class="back-btn">Back to home</a>
+  </section>
+
+
+<script>
+const elements = document.querySelectorAll(".content-page, .card");
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.style.opacity = 1;
+entry.target.style.transform = "translateY(0)";
+}
+});
+});
+
+elements.forEach(el => {
+el.style.opacity = 0;
+el.style.transform = "translateY(40px)";
+el.style.transition = "all 0.6s ease";
+observer.observe(el);
+});
+</script>
+
+<script>
+
+const galleryImages = document.querySelectorAll(".gallery img");
+
+galleryImages.forEach(img => {
+
+img.addEventListener("click", function(){
+
+const overlay = document.createElement("div");
+overlay.classList.add("overlay");
+
+const bigImage = document.createElement("img");
+bigImage.src = this.src;
+
+overlay.appendChild(bigImage);
+
+overlay.addEventListener("click", () => {
+overlay.remove();
+});
+
+document.body.appendChild(overlay);
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
+
+<h2>Activities in Norcasia</h2>
+
+<div class="activities">
+
+<div class="activity">
+<h3>🚣 Body Rafting</h3>
+<p>Float through the emerald waters of La Miel River.</p>
+</div>
+
+<div class="activity">
+<h3>🛟 Tubing</h3>
+<p>Relax while drifting along the peaceful river canyon.</p>
+</div>
+
+<div class="activity">
+<h3>🌊 San Lorenzo Waterfall</h3>
+<p>Experience the refreshing mist of this beautiful waterfall.</p>
+</div>
+
+</div>
+
+<section class="map-section">
+
+<h2>📍 Where is Norcasia?</h2>
+
+<div class="map-container">
+
+<iframe
+src="https://www.google.com/maps?q=Norcasia+Caldas+Colombia&output=embed"
+loading="lazy">
+</iframe>
+
+</div>
+
+<p class="map-description">
+Norcasia is located in the department of Caldas, Colombia. It is famous for
+its emerald rivers, tropical forests and peaceful landscapes.
+</p>
+
+<a href="https://www.google.com/maps/place/Norcasia+Caldas" target="_blank" class="map-button">
+Open in Google Maps
+</a>
+
+</section>
+
+</div>
